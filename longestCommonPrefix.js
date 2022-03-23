@@ -28,3 +28,22 @@
 };
 
 longestCommonPrefix(strs);
+
+
+// Youtube Soluion
+
+// var longestCommonPrefix = functions(strs) {
+//     if (str.length == 0) {
+//         return "";
+//     }
+
+//     let prefix = strs[0];
+
+//     for (let i=1; i<strs.length; i++) {
+//         while(strs[1].indexOf(prefix) !=0) {
+//             prefix = prefix.substring(0, prefix.length -1);
+//             console.log('Prefix is currently ' + prefix)
+//         }
+//     }
+//     return prefix
+// }
