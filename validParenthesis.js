@@ -2,33 +2,30 @@
  * @param {string} s
  * @return {boolean}
  */
- s="()"
+ s="()[]{}"
 
  var isValid = function(s) {
    
    let sArray = s.split("")
    
-  while (sArray.length>2) {
-   for (let i=0; i<sArray.length; i++) {
-  
-       if (sArray[i] == "(" && sArray[i+1] == ")") {
-         sArray.splice(i,2)
-         console.log(sArray)
-       } else if (sArray[i] == "{" && sArray[i+1] == "}"){
-         sArray.splice(i,2)
-         console.log(sArray)
-       } else if (sArray[i] == "[" && sArray[i+1] == "]") {
-         sArray.splice(i,2)
-         console.log(sArray)
-       } else {
-         console.log(sArray)
-       }
-     }
-   }
+      for (let j=0;j<sArray.length;) {
+        if (sArray[j] == "(" && sArray[j+1] == ")") {
+            sArray.splice(j,2)
+            j=0
+        } else if (sArray[j] == "{" && sArray[j+1] == "}"){
+            sArray.splice(j,2)
+            j=0
+        } else if (sArray[j] == "[" && sArray[j+1] == "]") {
+            sArray.splice(j,2)
+            j=0
+        } else {
+          j++
+        }
+      }
+   
  
- console.log(sArray.length)
-   console.log(sArray.toString())
- if (sArray.toString() === "(,)" || sArray.toString() === "[,]" || sArray.toString() === "{,}" ) {
+   
+ if (sArray.length === 0 ) {
    return true
  } else {
    return false
